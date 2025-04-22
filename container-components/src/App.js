@@ -9,6 +9,12 @@ import { DataSourceRender } from './components/data-source-render'
 const getDataFromServer = async (url) => {
   return fetch(url).then((response) => response.json())
 }
+const getDataFromLocalStorage = async (key) => () => {
+  localStorage.setItem(key, 'Message from local storage')
+  return localStorage.getItem(key)
+}
+
+const GetMessage = ({ message }) => <h1>{message}</h1>
 function App() {
   return (
     <>
@@ -40,6 +46,14 @@ function App() {
         getData={() => getDataFromServer('http://localhost:9090/books/1')}
         render={(book) => <BookInfo book={book} />}
       />
+
+      <hr />
+      <DataSource
+        getData={() => getDataFromLocalStorage('anyKey')}
+        resourceName={'message'}
+      >
+        <GetMessage />
+      </DataSource>
     </>
   )
 }
