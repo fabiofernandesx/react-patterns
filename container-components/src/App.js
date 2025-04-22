@@ -1,13 +1,24 @@
 import React from 'react'
 
 import { UserInfo } from './components/user-info'
-import { UserLoader } from './components/user-loader'
+import { BookInfo } from './components/book-info'
+import { ResourceLoader } from './components/resource-loader'
+
 function App() {
   return (
     <>
-      <UserLoader userId={'3'}>
+      <ResourceLoader
+        resourceUrl={'http://localhost:9090/users/2'}
+        resourceName={'user'}
+      >
         <UserInfo />
-      </UserLoader>
+      </ResourceLoader>
+      <ResourceLoader
+        resourceUrl={'http://localhost:9090/books/2'}
+        resourceName={'book'}
+      >
+        <BookInfo />
+      </ResourceLoader>
     </>
   )
 }
