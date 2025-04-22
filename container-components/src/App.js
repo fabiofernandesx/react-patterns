@@ -3,7 +3,11 @@ import React from 'react'
 import { UserInfo } from './components/user-info'
 import { BookInfo } from './components/book-info'
 import { ResourceLoader } from './components/resource-loader'
+import { DataSource } from './components/data-source'
 
+const getDataFromServer = async (url) => {
+  return fetch(url).then((response) => response.json())
+}
 function App() {
   return (
     <>
@@ -19,6 +23,15 @@ function App() {
       >
         <BookInfo />
       </ResourceLoader>
+
+      <hr />
+
+      <DataSource
+        getData={() => getDataFromServer('http://localhost:9090/users/1')}
+        resourceName={'user'}
+      >
+        <UserInfo />
+      </DataSource>
     </>
   )
 }
