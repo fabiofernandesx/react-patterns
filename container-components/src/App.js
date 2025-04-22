@@ -4,6 +4,7 @@ import { UserInfo } from './components/user-info'
 import { BookInfo } from './components/book-info'
 import { ResourceLoader } from './components/resource-loader'
 import { DataSource } from './components/data-source'
+import { DataSourceRender } from './components/data-source-render'
 
 const getDataFromServer = async (url) => {
   return fetch(url).then((response) => response.json())
@@ -32,6 +33,13 @@ function App() {
       >
         <UserInfo />
       </DataSource>
+
+      <hr />
+
+      <DataSourceRender
+        getData={() => getDataFromServer('http://localhost:9090/books/1')}
+        render={(book) => <BookInfo book={book} />}
+      />
     </>
   )
 }

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
 
 export const DataSource = ({ getData = () => {}, resourceName, children }) => {
   const [resource, setResource] = useState(null)
