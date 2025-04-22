@@ -6,6 +6,9 @@ const devConfig = {
   devServer: {
     port: 5173,
   },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
 }
 
 module.exports = merge(common, devConfig)
