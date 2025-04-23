@@ -1,11 +1,12 @@
-function App() {
+import { UncontrolledForm } from './components/uncontrolled-form'
+
+export default function App() {
   return (
     <>
       <div>
-        <h1>Vite Bare Bones</h1>
+        <h1>Uncontrolled Form</h1>
+        <UncontrolledForm />
       </div>
     </>
   )
 }
-
-export default App
