@@ -1,5 +1,6 @@
 import { UserInfo } from './components/user-info'
 import { CurrentUserInfo } from './components/current-user-info'
+import { UserInfoResource } from './components/user-info2'
 
 const App = () => {
   return (
@@ -10,6 +11,9 @@ const App = () => {
       <hr />
       <h2>Specific User</h2>
       <UserInfo userId={2} />
+      <hr />
+      <h2>Generic Resource Hook</h2>
+      <UserInfoResource />
     </>
   )
 }
