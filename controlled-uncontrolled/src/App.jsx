@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { ControlledForm } from './components/controlled-form'
 import { ControlledModal } from './components/controlled-modal'
 import { UncontrolledForm } from './components/uncontrolled-form'
+import { UncontrolledFlow } from './components/uncontrolled-flow'
 
 export default function App() {
   const [showModal, setShowModal] = useState(false)
@@ -23,6 +24,13 @@ export default function App() {
         >
           <h4>Modal Content</h4>
         </ControlledModal>
+        <hr />
+        <h2>Uncontrolled Flow</h2>
+        <UncontrolledFlow>
+          <h4>Step 1</h4>
+          <h4>Step 2</h4>
+          <h4>Step 3</h4>
+        </UncontrolledFlow>
       </div>
     </>
   )
