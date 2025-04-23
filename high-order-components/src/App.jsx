@@ -1,6 +1,7 @@
 import { includeUser } from './components/include-user'
 import { logProps } from './components/log-props'
 import { UserInfoForm } from './components/user-form'
+import { UserFormGeneric } from './components/user-form-generic'
 import { UserInfo } from './components/user-info'
 
 const UserInfoWrapper = logProps(UserInfo)
@@ -18,6 +19,9 @@ const App = () => {
       <hr />
       <h2>Updatable User</h2>
       <UserInfoForm />
+      <hr />
+      <h2>Updatable User With Generic Update Function</h2>
+      <UserFormGeneric />
     </>
   )
 }
